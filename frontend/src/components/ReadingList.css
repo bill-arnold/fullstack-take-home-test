@@ -1,0 +1,38 @@
+.reading-list {
+    padding: 20px;
+}
+
+.book-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.book-item {
+    flex: 1 1 calc(20% - 20px);
+    /* Adjust percentage to fit 4 or 5 items per row */
+    box-sizing: border-box;
+}
+
+.book-item img {
+    width: 100%;
+    height: auto;
+}
+
+.book-item div {
+    padding: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .book-item {
+        flex: 1 1 calc(50% - 20px);
+        /* Adjust for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .book-item {
+        flex: 1 1 calc(100% - 20px);
+        /* Adjust for very small screens */
+    }
+}
