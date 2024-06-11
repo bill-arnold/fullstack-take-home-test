@@ -25,8 +25,8 @@ Before you begin, ensure you have the following installed:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/my-bookshelf.git
-   cd my-bookshelf
+   git clone git@github.com:bill-arnold/fullstack-take-home-test.git
+   
    ```
 
 2. Navigate to the frontend directory and install dependencies:
@@ -56,14 +56,9 @@ Before you begin, ensure you have the following installed:
 - **Sidebar:** Navigate between different sections of the application.
   - **Book List:** View the list of available books.
   - **Book Search:** Search for books by title or author.
-  - **Reading List:** View and manage your personalized reading list.(N/B:when you first launch the app the reading list will be empty so go to book list and add books to the readinglist)
+  - **Reading List:** View and manage your personalized reading list.(N/B:when you first launch the app the reading list will be empty so go to book list and add books to the reading list)
 
 - **Home Page:** Welcomes users and provides an overview of the application.
-
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
 
