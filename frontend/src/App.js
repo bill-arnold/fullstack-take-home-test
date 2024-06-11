@@ -1,29 +1,40 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { CssBaseline } from '@mui/material';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { Container } from '@mui/material';
 import Sidebar from './components/Sidebar';
 import BookList from './components/BookList';
 import BookSearch from './components/BookSearch';
 import ReadingList from './components/ReadingList';
-import Footer from './components/Footer';
+import HomePage from './components/HomePage';
+import BackToHomeButton from './components/BackToHomeButton';
 import './styles.css';
 
-const App = () => (
-  <Router>
-    <CssBaseline />
-    <div className="app">
-      <h1>Ello's Book Store</h1>
-      <Sidebar />
-      <div className="content">
-        <Routes>
-          <Route path="/" element={<BookList />} />
-          <Route path="/search" element={<BookSearch />} />
-          <Route path="/reading-list" element={<ReadingList />} />
-        </Routes>
+// Wrap the use of useLocation in a custom component
+const LocationAwareButton = () => {
+  const location = useLocation(); // Hook to get the current location
+  return location.pathname !== '/' && <BackToHomeButton />;
+};
+
+const App = () => {
+  return (
+    <Router>
+      <div className="app">
+        <Sidebar />
+        <LocationAwareButton /> {/* Use the new component here */}
+        <Container>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/booklist" element={<BookList />} />
+            <Route path="/booksearch" element={<BookSearch />} />
+            <Route path="/readinglist" element={<ReadingList />} />
+          </Routes>
+        </Container>
       </div>
-    </div>
-    <Footer />
-  </Router>
-);
+      <footer className="footer">
+        © {new Date().getFullYear()} My Bookshelf
+      </footer>
+    </Router>
+  );
+};
 
 export default App;
